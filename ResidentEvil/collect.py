@@ -37,7 +37,6 @@ def get_links():
     soup_personagens = BeautifulSoup(resp.text)
     ancoras = (soup_personagens.find('div', class_="td-page-content")
                             .find_all('a'))
-
     links = [i['href'] for i in ancoras]
     return links 
 
@@ -64,9 +63,6 @@ def get_aparicoes(soup):
         .find_all('li'))
     aparicoes = [i.text for i in lis]
     return aparicoes
-#%%
-# Fazer a conexão
-url = "https://www.residentevildatabase.com/personagens/ada-wong/"
 
 def get_personagem(url):
     resp = get_content(url)
